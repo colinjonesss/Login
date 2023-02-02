@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segue.destination.navigationItem.title = userNameTextField.text
         
         guard let sender = sender as? UIButton else {return}
         if sender == forgotPasswordButton {
@@ -30,7 +31,6 @@ class ViewController: UIViewController {
         } else {
             segue.destination.navigationItem.title = userNameTextField.text
         }
-        segue.destination.navigationItem.title = userNameTextField.text
     }
 
     @IBAction func forgotUsername(_ sender: Any) {
